@@ -237,8 +237,10 @@ To group based on column names, we can give the function like below :
 ordersDF1.select('order_item_order_id',ordersDF1.groupBy('order_item_order_id').agg(sum('order_item_subtotal').alias('order_revenue')))
 agg helps to provide alias name and propagate along with it.
 
-
-
+Sort :
+ordersDF.sort(['order_id','order_date'],ascending=[1,0]).show()
+ordersDF.sort('ordersDF.order_id.desc()','order_date').show()
+Sort within Groups -ordersDF.sortWithinPartitions(['order_date','order_status'],ascending=[1,0]).show()
 
 
 
