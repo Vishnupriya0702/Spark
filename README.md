@@ -242,7 +242,20 @@ ordersDF.sort(['order_id','order_date'],ascending=[1,0]).show()
 ordersDF.sort('ordersDF.order_id.desc()','order_date').show()
 Sort within Groups -ordersDF.sortWithinPartitions(['order_date','order_status'],ascending=[1,0]).show()
 
-
+Spark with MachineLearning :
+  Linear Regression : This part comes under classification section.Linear Regression Model is designed to perform Predictive analysis.
+  RegParam - Regularization Parameter. It should be greater than 0. Default is 0.0
+  ElasticNetParam : This indicates alpha(0,1). This also predicts the output based on the parameter inputs.
+  
+  Pipeline : Build a pipeline based on the input values.
+  ParamGridBuilder : Is to add the parameters needed for the Predictive analysis.
+  
+  Crossvalidator - splits the data into training & test data and performs the validation.
+  Evaluator : Evalutor performs the data regression at maximum level. Evalutor can be RegressionEvalutor, CrossvalidationEvalutor.
+  Fit - it helps to fit the exact model to the Evalutor.
+  Transform - transform from tarining to test.
+  Correlation - Correlaation between 2 variables. 
+  
 
 
  
