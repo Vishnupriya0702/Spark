@@ -256,6 +256,31 @@ Spark with MachineLearning :
   Transform - transform from tarining to test.
   Correlation - Correlaation between 2 variables. 
   
+  
+  Performance TUning:
+  1. Dynamic Allocation . Spark.dynamicALlocation.enabled
+  2. Spark.DynamicAllocation.executorIdelTimeout - when executor didnt receive an order, it will automatically timed out.
+  3. Spark.Memory.fraction- determines the memory used for storage and execution.
+  Heap memory -
+  4. Storing the large shuffled persistent data in serialized form such as Memory_only_ser.
+  
+  5. spark.executor.memory, spark.executor.cores, spark.cores.max, spark.driver.memory
+  6.Spark.speculation - if one or more stages are running solwly, that could be relaunched.
+  
+  Using some code techniques:
+  1. Properties to store Data at rest : 1. COlumnar format storage 2. Partition the data 3. Use Bucketing
+  2. Coding perspectives : 1. Filter the data, join, Using Repartition and Coalesce. Repartition is mainly used before join. Coalsece is used for meging the datasets.
+  
+  Concepts of Pipeline and Shuffle Persistence :
+  Pipeline - Processing all tasks in parallel - Map, filter, map - all can be done in paralel in 1 stage
+  Shuffle persistance - We also use Shuffle persistance to store the shuffled data in disk, which can be used for the next set of users. 
+  But, needs to be careful as the data is stored in disk and we need to be garabage collection.
+  
+  Garbage tuning : Use Kyro Serialization to store the Memory_only_ser
+  Garbage collection is invoked everytime when the old size is full. When everytime this garbage collection is invoked, we have to study the data so closely to monitor it.
+  In order to avoid this garbage collection, we need to control the cache.
+  
+  
 
 
  
