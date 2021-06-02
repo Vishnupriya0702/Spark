@@ -281,6 +281,11 @@ Spark with MachineLearning :
   In order to avoid this garbage collection, we need to control the cache.
   
   
+  Difference between GLOBALTEMPVIEW and CreateorReplaceTempView:
+  CreateorReplaceTempView : Register the Dataframe as a SQL Temporary view
+  GlobalTempView : This view is created to globally to share across all sessions and use unless the spark application terminates.
+  
+  
 
 
  
